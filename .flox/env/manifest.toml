@@ -7,6 +7,8 @@ runme.pkg-path = "runme"
 
 bun.pkg-path = "bun"
 biome.pkg-path = "biome"
+nodejs.pkg-path = "nodejs"
+yarn.pkg-path = "yarn"
 
 [options]
 systems = ["aarch64-darwin", "aarch64-linux", "x86_64-darwin", "x86_64-linux"]
