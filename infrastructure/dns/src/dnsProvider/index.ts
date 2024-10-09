@@ -418,7 +418,7 @@ export class ManagedDomain extends Construct {
 			name: "@",
 			type: "MX",
 			ttl: 3600,
-			priority: 10,
+			priority: 1,
 			value: "mx1.simplelogin.co.",
 			comment: "Managed by Terraform",
 		});
@@ -428,7 +428,7 @@ export class ManagedDomain extends Construct {
 			name: "@",
 			type: "MX",
 			ttl: 3600,
-			priority: 20,
+			priority: 5,
 			value: "mx2.simplelogin.co.",
 			comment: "Managed by Terraform",
 		});

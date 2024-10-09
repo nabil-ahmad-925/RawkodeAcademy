@@ -5,7 +5,7 @@ export default (scope: Construct): ManagedDomain => {
 	const managedDomain = new ManagedDomain(
 		scope,
 		"rawkode.academy",
-		Registrar.Cloudflare
+		Registrar.Cloudflare,
 	);
 
 	managedDomain
@@ -17,39 +17,39 @@ export default (scope: Construct): ManagedDomain => {
 		.addTextRecord(
 			"google-site-verification",
 			"@",
-			"google-site-verification=dlh9jxVzubowYFoVO82naJOotuUwY8zNG2VYGWlDhsU"
+			"google-site-verification=dlh9jxVzubowYFoVO82naJOotuUwY8zNG2VYGWlDhsU",
 		)
 		.addCNameRecord("api", "api", "rawkode-academy-api.fly.dev")
 		.addCNameRecord("stripe", "billing", "hosted-checkout.stripecdn.com")
 		.addTextRecord(
 			"stripe-acme",
 			"_acme-challenge.billing",
-			"sJV8MAy9curK26zz05xdgnDL3X6uf-2IEdua78oHimw"
+			"sJV8MAy9curK26zz05xdgnDL3X6uf-2IEdua78oHimw",
 		)
 		.addTextRecord(
 			"_atproto",
 			"_atproto",
-			"did=did:plc:qtpysarntxepux4to4dr4hgr"
+			"did=did:plc:qtpysarntxepux4to4dr4hgr",
 		)
 		.addCNameRecord(
 			"clerk-accounts-portal",
 			"accounts",
-			"accounts.clerk.services"
+			"accounts.clerk.services",
 		)
 		.addCNameRecord(
 			"clerk-frontend-api",
 			"clerk",
-			"frontend-api.clerk.services"
+			"frontend-api.clerk.services",
 		)
 		.addCNameRecord(
 			"clerk-dkim-1",
 			"clk._domainkey",
-			"dkim1.yo4jsvea9l19.clerk.services"
+			"dkim1.yo4jsvea9l19.clerk.services",
 		)
 		.addCNameRecord(
 			"clerk-dkim-2",
 			"clk2._domainkey",
-			"dkim2.yo4jsvea9l19.clerk.services"
+			"dkim2.yo4jsvea9l19.clerk.services",
 		)
 		.addCNameRecord("clerk-mail", "clkmail", "mail.yo4jsvea9l19.clerk.services")
 		.enableResend({
@@ -61,19 +61,24 @@ export default (scope: Construct): ManagedDomain => {
 		.addCNameRecord(
 			"workos-1",
 			"em4779.platform",
-			"u36670648.wl149.sendgrid.net"
+			"u36670648.wl149.sendgrid.net",
 		)
 		.addCNameRecord(
 			"workos-2",
 			"wos._domainkey.platform",
-			"wos.domainkey.u36670648.wl149.sendgrid.net"
+			"wos.domainkey.u36670648.wl149.sendgrid.net",
 		)
 		.addCNameRecord(
 			"workos-3",
 			"wos2._domainkey.platform",
-			"wos2.domainkey.u36670648.wl149.sendgrid.net"
+			"wos2.domainkey.u36670648.wl149.sendgrid.net",
 		)
-		.addCNameRecord("workos-auth", "auth", "cname.workos-dns.com");
+		.addCNameRecord("auth", "auth", "cname.workos-dns.com")
+		.addCNameRecord(
+			"zitadel",
+			"zitadel",
+			"production-fd4ynk.eu1.zitadel.cloud",
+		);
 
 	return managedDomain;
 };
